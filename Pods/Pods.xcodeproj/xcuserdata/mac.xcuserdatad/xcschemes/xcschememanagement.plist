@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>JLRoutes.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JLRouteTest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Yoga.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>338520CE9579AC64EA9B5CCE9C436027</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CC515BBE3A9B7F3A329AAF5B2A78641</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A8079B9F9965CAD315A17C1329A41CCA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D198BEEC963D5950B955A306E38293D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
