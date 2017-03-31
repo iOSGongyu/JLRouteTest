@@ -12,7 +12,6 @@
 @interface SystemMediator : NSObject
 
 + (instancetype)sharedInstance;
-- (void)createSystemPage;
 - (void)openModuleWithURL:(NSURL *)url;
 
 @end

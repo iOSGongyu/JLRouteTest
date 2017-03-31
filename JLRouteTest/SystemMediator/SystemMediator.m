@@ -27,26 +27,6 @@
     return mediator;
 }
 
-- (void)createSystemPage {
-    Class mainClass = NSClassFromString(@"MianViewController");
-    Class moduleAClass = NSClassFromString(@"ModuleAMainViewController")?:NSClassFromString(@"UIViewController");
-    Class moduleBClass = NSClassFromString(@"ModuleBMainViewController")?:NSClassFromString(@"UIViewController");
-    
-    id mainController = [[mainClass alloc] init];
-    UIViewController *moduleAController = [[moduleAClass alloc] init];
-    UIViewController *moduleBController = [[moduleBClass alloc] init];
-    
-    moduleAController.tabBarItem.title = @"业务一";
-    moduleBController.tabBarItem.title = @"业务二";
-    
-    if ([mainController isKindOfClass:[UITabBarController class]]) {
-        [mainController performSelector:@selector(setViewControllers:) withObject:@[moduleAController,moduleBController]];
-    }
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainController];
-    [nav setNavigationBarHidden:YES];
-    [[[UIApplication sharedApplication] delegate] window].rootViewController = nav;
-}
-
 - (UINavigationController *)mainNav {
     if (!_mainNav) {
         _mainNav = (UINavigationController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
@@ -70,20 +50,9 @@
 }
 
 - (void)openModuleWithURL:(NSURL *)url {
-    if ([url.host isEqualToString:@"MouduleA"]) {
-        [self openModuleAWithURL:url];
-    }
-}
-
-#pragma mark moduleA
-- (void)openModuleAWithURL:(NSURL *)url {
     [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
         [[JLRoutes globalRoutes] routeURL:url];
     }];
-}
-
-- (void)openModuleB {
-    
 }
 
 @end

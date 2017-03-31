@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SystemMediator.h"
+#import "SystemMediator+CreateMainPage.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[SystemMediator sharedInstance] createSystemPage];
+    [[SystemMediator sharedInstance] createMainPage];
     
     return YES;
 }
