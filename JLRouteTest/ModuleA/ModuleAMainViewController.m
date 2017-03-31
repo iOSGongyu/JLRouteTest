@@ -80,8 +80,10 @@
         
     } else if (indexPath.row == 2) {
         viewUrl = [NSURL URLWithString:@"JLRoutesTest://MouduleA/ModuleAH5PageViewController"];
+        
     } else {
-        viewUrl = @"";
+        viewUrl = [[NSURL alloc] init];
+        
     }
     [[SystemMediator sharedInstance] openModuleWithURL:viewUrl];
 }

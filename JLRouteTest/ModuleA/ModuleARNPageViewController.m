@@ -20,7 +20,7 @@
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     NSURL *jsCodeLocation;
-    jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+    jsCodeLocation = [NSURL URLWithString:@"http://192.168.0.76:8081/index.ios.bundle?platform=ios&dev=true"];
     RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                         moduleName:@"SimpleApp"
                                                  initialProperties:nil
