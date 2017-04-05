@@ -10,4 +10,10 @@
 
 @interface ModuleANativePageViewController : UIViewController
 
+/*
+ *json串
+ *text:展示文字
+ */
+@property (nonatomic, copy) NSString *parameterJsonString;
+
 @end

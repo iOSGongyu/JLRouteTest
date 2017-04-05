@@ -35,11 +35,13 @@
 }
 
 - (void)registerModule {
-    [[JLRoutes globalRoutes] addRoute:@"/:moudle/:target" handler:^BOOL(NSDictionary<NSString *,id> * _Nonnull parameters) {
+    [[JLRoutes globalRoutes] addRoute:@"/:module/:target/:action/:parameter" handler:^BOOL(NSDictionary<NSString *,id> * _Nonnull parameters) {
         NSString *targetClassString = parameters[@"target"];
         Class targetClass = NSClassFromString(targetClassString);
         id object = [[targetClass alloc] init];
-        
+        if ([object respondsToSelector:@selector(setParameterJsonString:)]) {
+            [object performSelector:@selector(setParameterJsonString:) withObject:parameters[@"parameter"]];
+        }
         if ([object isKindOfClass:[UIViewController class]]) {
             [self.mainNav pushViewController:(UIViewController *)object animated:YES];
             return YES;
@@ -51,8 +53,15 @@
 
 - (void)openModuleWithURL:(NSURL *)url {
     [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
-        [[JLRoutes globalRoutes] routeURL:url];
+        if (success) {
+            [[JLRoutes globalRoutes] routeURL:url];
+        }
     }];
+}
+
+//消除警告
+- (void)setParameterJsonString:(id)parameter {
+    
 }
 
 @end

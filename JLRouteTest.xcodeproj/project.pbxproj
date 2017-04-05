@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0403A75C1E8DE13E000B624C /* SystemMediator+CreateMainPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403A75B1E8DE13E000B624C /* SystemMediator+CreateMainPage.m */; };
+		042685381E949127004EF87B /* RNOpenNativeMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 042685371E949127004EF87B /* RNOpenNativeMediator.m */; };
 		047070241E8B5B320001D95B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 047070231E8B5B320001D95B /* main.m */; };
 		047070271E8B5B320001D95B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047070261E8B5B320001D95B /* AppDelegate.m */; };
 		0470702A1E8B5B320001D95B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047070291E8B5B320001D95B /* ViewController.m */; };
@@ -21,12 +22,15 @@
 		049AF1141E8CE337000350FD /* ModuleANativePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AF1131E8CE337000350FD /* ModuleANativePageViewController.m */; };
 		049AF1281E8CF5AD000350FD /* ModuleARNPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AF1271E8CF5AC000350FD /* ModuleARNPageViewController.m */; };
 		049AF12B1E8CF7E2000350FD /* ModuleAH5PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AF12A1E8CF7E2000350FD /* ModuleAH5PageViewController.m */; };
+		04DBCD861E8F39E600D02F9B /* ModuleAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DBCD851E8F39E600D02F9B /* ModuleAModel.m */; };
 		9E57062FE3681E7F8E73945A /* Pods_JLRouteTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB237E758DB3E0A4DC1F901 /* Pods_JLRouteTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0403A75A1E8DE13E000B624C /* SystemMediator+CreateMainPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SystemMediator+CreateMainPage.h"; sourceTree = "<group>"; };
 		0403A75B1E8DE13E000B624C /* SystemMediator+CreateMainPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SystemMediator+CreateMainPage.m"; sourceTree = "<group>"; };
+		042685361E949127004EF87B /* RNOpenNativeMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOpenNativeMediator.h; sourceTree = "<group>"; };
+		042685371E949127004EF87B /* RNOpenNativeMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOpenNativeMediator.m; sourceTree = "<group>"; };
 		0470701F1E8B5B320001D95B /* JLRouteTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLRouteTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047070231E8B5B320001D95B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		047070251E8B5B320001D95B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		049AF1271E8CF5AC000350FD /* ModuleARNPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleARNPageViewController.m; sourceTree = "<group>"; };
 		049AF1291E8CF7E2000350FD /* ModuleAH5PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAH5PageViewController.h; sourceTree = "<group>"; };
 		049AF12A1E8CF7E2000350FD /* ModuleAH5PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleAH5PageViewController.m; sourceTree = "<group>"; };
+		04DBCD841E8F39E600D02F9B /* ModuleAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleAModel.h; sourceTree = "<group>"; };
+		04DBCD851E8F39E600D02F9B /* ModuleAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleAModel.m; sourceTree = "<group>"; };
 		86171EBA2DE63D4D8033C035 /* Pods-JLRouteTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLRouteTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLRouteTest/Pods-JLRouteTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DCB237E758DB3E0A4DC1F901 /* Pods_JLRouteTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLRouteTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B9CB25A7E09CB5CDBB9473 /* Pods-JLRouteTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLRouteTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLRouteTest/Pods-JLRouteTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 				049AF1271E8CF5AC000350FD /* ModuleARNPageViewController.m */,
 				049AF1291E8CF7E2000350FD /* ModuleAH5PageViewController.h */,
 				049AF12A1E8CF7E2000350FD /* ModuleAH5PageViewController.m */,
+				04DBCD841E8F39E600D02F9B /* ModuleAModel.h */,
+				04DBCD851E8F39E600D02F9B /* ModuleAModel.m */,
 			);
 			path = ModuleA;
 			sourceTree = "<group>";
@@ -142,6 +150,8 @@
 		049AF1051E8CA565000350FD /* SystemMediator */ = {
 			isa = PBXGroup;
 			children = (
+				042685361E949127004EF87B /* RNOpenNativeMediator.h */,
+				042685371E949127004EF87B /* RNOpenNativeMediator.m */,
 				049AF1061E8CA5B4000350FD /* SystemMediator.h */,
 				049AF1071E8CA5B4000350FD /* SystemMediator.m */,
 				0403A75A1E8DE13E000B624C /* SystemMediator+CreateMainPage.h */,
@@ -291,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049AF1111E8CD70C000350FD /* ModuleBMainViewController.m in Sources */,
+				04DBCD861E8F39E600D02F9B /* ModuleAModel.m in Sources */,
 				0403A75C1E8DE13E000B624C /* SystemMediator+CreateMainPage.m in Sources */,
 				049AF10B1E8CD54A000350FD /* MianViewController.m in Sources */,
 				049AF12B1E8CF7E2000350FD /* ModuleAH5PageViewController.m in Sources */,
@@ -300,6 +311,7 @@
 				049AF1081E8CA5B4000350FD /* SystemMediator.m in Sources */,
 				047070271E8B5B320001D95B /* AppDelegate.m in Sources */,
 				049AF1281E8CF5AD000350FD /* ModuleARNPageViewController.m in Sources */,
+				042685381E949127004EF87B /* RNOpenNativeMediator.m in Sources */,
 				047070241E8B5B320001D95B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

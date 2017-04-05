@@ -7,8 +7,11 @@
 //
 
 #import "ModuleANativePageViewController.h"
+#import "ModuleAModel.h"
 
 @interface ModuleANativePageViewController ()
+
+@property (nonatomic, strong) NSDictionary *parameter;
 
 @end
 
@@ -22,8 +25,10 @@
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
+    NSString *text = [self.parameter objectForKey:@"text"];
+    
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64)];
-    label.text = @"我是业务A 原生 页面";
+    label.text = text;//@"我是业务A 原生 页面";
     label.textColor = [UIColor blackColor];
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
@@ -43,8 +48,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSDictionary *)parameter {
+    if (!_parameter) {
+        _parameter = [self dictionaryWithJsonString:self.parameterJsonString];
+    }
+    return _parameter;
+}
+
 - (void)buttonAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+    
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
+
 
 @end

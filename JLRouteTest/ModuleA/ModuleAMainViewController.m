@@ -8,6 +8,7 @@
 
 #import "ModuleAMainViewController.h"
 #import "SystemMediator.h"
+#import "ModuleAModel.h"
 
 @interface ModuleAMainViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -73,19 +74,38 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSURL *viewUrl;
     if (indexPath.row == 0) {
-        viewUrl = [NSURL URLWithString:@"JLRoutesTest://MouduleA/ModuleANativePageViewController"];
+        NSDictionary *dict = @{@"text":@"业务A 原生 页面"};
+        NSString *jsonStr = [self dataTOjsonString:dict];
+        NSString *urlStr = [NSString stringWithFormat:@"JLRoutesTest://MouduleA/ModuleANativePageViewController/setParameter/%@",jsonStr];
+        urlStr = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        viewUrl = [NSURL URLWithString:urlStr];
         
     } else if (indexPath.row == 1) {
-        viewUrl = [NSURL URLWithString:@"JLRoutesTest://MouduleA/ModuleARNPageViewController"];
+        viewUrl = [NSURL URLWithString:@"JLRoutesTest://MouduleA/ModuleARNPageViewController/setParameter/666"];
         
     } else if (indexPath.row == 2) {
-        viewUrl = [NSURL URLWithString:@"JLRoutesTest://MouduleA/ModuleAH5PageViewController"];
+        viewUrl = [NSURL URLWithString:@"JLRoutesTest://MouduleA/ModuleAH5PageViewController/setParameter/666"];
         
     } else {
         viewUrl = [[NSURL alloc] init];
         
     }
+    
     [[SystemMediator sharedInstance] openModuleWithURL:viewUrl];
+}
+
+- (NSString*)dataTOjsonString:(id)object {
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    if (!jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
 }
 
 @end
