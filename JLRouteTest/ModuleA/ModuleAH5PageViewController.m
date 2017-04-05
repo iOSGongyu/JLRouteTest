@@ -7,8 +7,12 @@
 //
 
 #import "ModuleAH5PageViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "SystemMediator.h"
 
-@interface ModuleAH5PageViewController ()
+@interface ModuleAH5PageViewController () <UIWebViewDelegate>
+
+@property (strong, nonatomic) JSContext *context;
 
 @end
 
@@ -20,6 +24,7 @@
     
     UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-44)];
     [web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.0.76/myprojects/HTMLDemo/helloworld.html"]]];
+    web.delegate = self;
     [self.view addSubview:web];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -38,6 +43,17 @@
 
 - (void)buttonAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    self.context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    
+    self.context[@"openPage"] = ^(NSString *a,NSString *b,NSString *c) {
+        NSLog(@"%@ %@ %@",a,b,c);
+        NSURL *viewUrl = [NSURL URLWithString:@"JLRoutesTest://MouduleA/ModuleARNPageViewController/setParameter/666"];
+        [[SystemMediator sharedInstance] openModuleWithURL:viewUrl];
+    };
+    
 }
 
 @end

@@ -13,14 +13,14 @@
 
 RCT_EXPORT_MODULE()
 //RN跳转原生界面
-RCT_EXPORT_METHOD(RNOpenOneVC:(NSDictionary *)msg) {
-    NSLog(@"RN传入原生界面的数据为:%@",msg);
-    NSString *module = msg[@"module"];
-    NSString *target = msg[@"target"];
-    NSString *action = msg[@"action"];
-    NSDictionary *parameter = msg[@"parameter"];
-    NSString *parameterStr = [self dataTOjsonString:parameter];
-    NSString *urlStr = [NSString stringWithFormat:@"JLRoutesTest://%@/%@/%@/%@",module,target,action,parameterStr];
+RCT_EXPORT_METHOD(RNOpenOneVC:(NSDictionary *)pageParameter) {
+    NSLog(@"RN传入原生界面的数据为:%@",pageParameter);
+    NSString *module = pageParameter[@"module"];
+    NSString *target = pageParameter[@"target"];
+    NSString *action = pageParameter[@"action"];
+    NSDictionary *actionParameter = pageParameter[@"parameter"];
+    NSString *parameterJsonStr = [self dataTOjsonString:actionParameter];
+    NSString *urlStr = [NSString stringWithFormat:@"JLRoutesTest://%@/%@/%@/%@",module,target,action,parameterJsonStr];
     urlStr = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     __block NSURL *url = [NSURL URLWithString:urlStr];
     //主要这里必须使用主线程发送,不然有可能失效

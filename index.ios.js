@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text ,NativeModules, TouchableHighlight, TouchableOpacity} from 'react-native';
+import { AppRegistry, Text, NativeModules, TouchableHighlight, TouchableOpacity} from 'react-native';
 
 var RNModules = NativeModules.RNOpenNativeMediator;
 
