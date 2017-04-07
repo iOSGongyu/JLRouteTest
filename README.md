@@ -35,5 +35,5 @@ SystemMediator处理所有的业务注册及调度：
 
 &emsp;&emsp;在这段代码中，我按照在1中约定的规则，传入响应的数据，JLRoutesTest是代表app本身，一般来说由外部app调用时必须使用；MouduleA代表业务A；ModuleANativePageViewController代表业务A下的一个页面；setParameter是要调用的设置方法；jsonStr是setParameter需要的参数。
 
-**4.RN页面如何打开原生页面? **   
+**4.RN页面如何打开原生页面?**  
 &emsp;&emsp;RNOpenNativeMediator类负责，RN文件中调用方法后，会执行本类中的方法，然后根据参数进行处理，实际调度方法与以上相同，本类主要负责与RN通信。
