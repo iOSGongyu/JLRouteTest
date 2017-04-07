@@ -8,6 +8,11 @@
 
 #import "RNOpenNativeMediator.h"
 #import "SystemMediator.h"
+#import <React/RCTBridgeModule.h>
+
+@interface RNOpenNativeMediator ()<RCTBridgeModule>
+
+@end
 
 @implementation RNOpenNativeMediator
 

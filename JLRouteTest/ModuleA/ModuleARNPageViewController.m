@@ -38,6 +38,10 @@
     [button setBackgroundColor:[UIColor redColor]];
 }
 
+-(void)dealloc {
+    NSLog(@"%@",@"ModuleARNPageViewController dealloc");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

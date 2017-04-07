@@ -11,7 +11,7 @@ class SimpleApp extends Component {
   	var pageParameter = {
     	"module"     : "moduleA",
     	"target"      : "ModuleANativePageViewController",
-    	"action"  : "setParameter",
+    	"action"  : "setParameterJsonString",
     	"parameter"  : actionParameter
 	};
     return (

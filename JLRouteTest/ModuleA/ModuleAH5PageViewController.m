@@ -48,8 +48,8 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     self.context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
     
-    self.context[@"openPage"] = ^(NSString *a,NSString *b,NSString *c) {
-        NSLog(@"%@ %@ %@",a,b,c);
+    self.context[@"openPage"] = ^(NSString *a) {
+        NSLog(@"%@",a);
         NSURL *viewUrl = [NSURL URLWithString:@"JLRoutesTest://MouduleA/ModuleARNPageViewController/setParameter/666"];
         [[SystemMediator sharedInstance] openModuleWithURL:viewUrl];
     };

@@ -74,7 +74,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSURL *viewUrl;
     if (indexPath.row == 0) {
-        NSDictionary *dict = @{@"text":@"业务A 原生 页面"};
+        NSDictionary *dict = @{@"text" : @"业务A 原生 页面"};
         NSString *jsonStr = [self dataTOjsonString:dict];
         NSString *urlStr = [NSString stringWithFormat:@"JLRoutesTest://MouduleA/ModuleANativePageViewController/setParameter/%@",jsonStr];
         urlStr = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
